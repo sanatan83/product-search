@@ -1,34 +1,33 @@
 $black_color: #000000;
-$bgcolor: rgb(224, 224, 224);
-$cardBgColor: rgba(139, 134, 134, 0.842);
+$card_background_Color: #969090;
 $dark_gray: #3b3b3b;
-$footerBgColor: rgb(53, 52, 52);
-$textColor: #db4437;
+$footer_background_color: #1a1818;
+$green_color: #00FF00;
+$text_color: #db4437;
 $white_color: #ffffff;
 
-
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 body {
-  font-family: "Open Sans", "Helvetica Neue", sans-serif;
   background: url("../img/Books-Bg1.png");
   background-size: cover;
+  font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 img {
+  border-radius: 1px;
   height: 192px;
   width: 128;
-  border-radius: 1px;
 }
 
 h3 {
-  color: $textColor;
-  text-align: center;
+  color: $text_color;
   padding: 0 0 16px 0;
+  text-align: center;
 }
 
 a {
@@ -38,188 +37,156 @@ a {
 }
 
 a:hover {
-  color: $textColor;
+  color: $text_color;
 }
 
 button {
+  align-items: center;
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
 ul {
+  font-size: 12px;
+  list-style-type: none;
   margin: 0;
   padding: 0;
-  list-style-type: none;
-  font-size: 12px;
 }
 
 .container {
-  width: 90%;
-  max-width: 1920px;
-  height: 100%;
-  margin: 0 auto;
-  position: relative;
   display: grid;
   grid-gap: 32px;
-  grid-template-columns: repeat(4, 1fr);
+  height: 100%;
+  margin: 0 auto;
+  max-width: 1920px;
+  position: relative;
   text-align: center;
+  width: 90%;
 }
 
 .custom-card {
-  background-color: $cardBgColor;
-  padding: 16px;
+  background-color: $card_background_Color;
   border-radius: 16px;
+  padding: 16px;
 }
 
 .scroll-to-top {
-  position: fixed;
   bottom: 8px;
-  right: 8px;
-  animation: fadeIn 700ms ease-in-out 1s both;
   cursor: pointer;
-  width: 50px;
   height: 50px;
+  position: fixed;
+  right: 8px;
+  width: 50px;
 }
 
 .scroll-icon {
-  width: 100%;
-  height: 100%;
+  align-items: center;
+  background: $black_color;
+  border-radius: 50%;
   display: flex;
   justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-  background: $black_color;
-
-  fill: white;
+  height: 100%;
   transform: rotate(-90deg);
+  width: 100%;
 }
 
 .loading-card {
-  margin: 10px;
-  background: #fff;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-  background-color: #e0e0e0;
-  border-radius: 16px;
+  background-color: $white_color;
+  margin: 10px;
   padding: 16px;
   transition: 0.2s ease-in-out;
   -webkit-transition: 0.2s ease-in-out;
   .image {
-    height: 192px;
-    width: 128px;
-    margin: 0 auto;
     border-radius: 8px;
+    height: 192px;
+    margin: 0 auto;
+    width: 128px;
   }
 
   .content {
     padding: 20px 30px;
   }
-  .image,
-  h2,
-  p {
-    background: #eee;
-    background: linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%);
-    border-radius: 5px;
+  .image
+  {
+    background-color: $white_color;
     background-size: 200% 100%;
+    border-radius: 5px;
     margin: 8px auto;
-    animation: 1.5s shine linear infinite;
   }
 }
 
 .loading-card:hover{
-  transform: scale(1.1);
   cursor: pointer;
+  transform: scale(1.1);
 }
 
 .load-more {
-  width: max-content;
   display: grid;
+  margin-bottom: 50px;
+  padding: 10px;
   place-items: center;
   width: 100%;
-  padding: 10px;
-  margin-bottom: 50px;
-
   button {
-    padding: 10px 20px 10px 20px;
     background-color: $white_color;
-    border: 1px solid $footerBgColor;
-    color: $black_color;
+    border: 1px solid $footer_background_color;
     border-radius: 8px;
+    color: $black_color;
     cursor: pointer;
+    padding: 10px 20px 10px 20px;
     transition: 0.5s ease-in-out;
     &:hover {
-      background-color: $footerBgColor;
+      background-color: $footer_background_color;
       color: $white_color;
-      animation: hover .5s ease-in-out;
     }
   }
 }
 footer {
-  background: $footerBgColor;
-  padding: 1rem;
+  background: $footer_background_color;
   color: $white_color;
+  padding: 16px;
   text-align: center;
-}
-
-@media screen and (max-width: 1200px) {
-  .container {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-}
-
-@media screen and (max-width: 850px) {
-  .github-icon {
-    top: 110px;
-  }
-  .heading-name {
-    width: 48rem;
-  }
 }
 
 @media screen and (max-width: 768px) {
   .container {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 16px 16px;
   }
   .container-articles {
-    grid-template-columns: 1fr;
-  }
-  .heading-name {
-    font-size: 42px;
-    width: 35rem;
+    grid-template-columns: 16px;
   }
 }
 .overlay {
-  position: fixed;
-  top: 0;
+  background-color: $black_color;
   bottom: 0;
   left: 0;
+  position: fixed;
+  opacity: 0;
   right: 0;
-  background: rgba(0, 0, 0, 0.7);
+  top: 0;
   transition: opacity 500ms;
   visibility: hidden;
-  opacity: 0;
   z-index: 1;
 }
 .modal-active {
-  visibility: visible;
   opacity: 1;
+  visibility: visible;
 }
 
 .popup {
+  background-color: $white_color;
+  border-radius: 5px;
   margin: 70px auto;
   padding: 20px;
-  background: #fff;
-  border-radius: 5px;
-  width: 40%;
   position: relative;
+  width: 40%;
   transition: all 0.52s ease-in-out;
 }
 
 .popup > h3 {
+  color: $dark_gray;
   padding: 1em;
-  color: #333;
-  font-family: Tahoma, Arial, sans-serif;
 }
 .popup > .close {
   position: absolute;
@@ -229,13 +196,10 @@ footer {
   font-size: 30px;
   font-weight: bold;
   text-decoration: none;
-  color: #333;
+  color: $dark_gray;
 }
 .popup > .close:hover {
-  color: #06d85f;
+  color: $green_color;
   cursor: pointer;
 }
-.popup > .content {
-  max-height: 30%;
-  word-break: break-word;
-}
+
